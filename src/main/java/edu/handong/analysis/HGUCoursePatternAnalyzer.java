@@ -74,12 +74,12 @@ public class HGUCoursePatternAnalyzer {
 	 * @param student
 	 * @return boolean
 	 */
-	private boolean studentExist(Student[] students, Student student) {
+	/*private boolean studentExist(Student[] students, Student student) {
 		
 		// TODO: implement this method
 		
 		return false;
-	}
+	}*/
 	
 	/**
 	 * This method returns a Course array to initiate the field, courses, from lines.
@@ -105,11 +105,11 @@ public class HGUCoursePatternAnalyzer {
 	 * @param course
 	 * @return boolean
 	 */
-	private boolean courseExist(Course[] courses, Course course) {
+	/*private boolean courseExist(Course[] courses, Course course) {
 		
 		// TODO: implement this method
 
 		return false;
-	}
+	}*/
 
 }
