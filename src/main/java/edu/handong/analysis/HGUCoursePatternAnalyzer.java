@@ -57,7 +57,7 @@ public class HGUCoursePatternAnalyzer {
 		
 		// TODO: implement this method
 		
-		Student[] st=new Student[100];
+		Student[] st=new Student[lines.length];
 		int i=0;
 		for(String spname:lines)
 		{
@@ -89,7 +89,7 @@ public class HGUCoursePatternAnalyzer {
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
-		Course[] cs=new Course[100];
+		Course[] cs=new Course[lines.length];
 		int i=0;
 		for(String spname:lines)
 		{
