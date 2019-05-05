@@ -56,7 +56,10 @@ public class HGUCoursePatternAnalyzer {
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
-		
+		for(String spname:lines)
+		{
+			spname.split(",")[1].trim();
+		}
 		
 		return null;
 	}
@@ -83,6 +86,10 @@ public class HGUCoursePatternAnalyzer {
 		
 		// TODO: implement this method
 		
+		for(String spname:lines)
+		{
+			spname.split(",")[2].trim();
+		}
 		return null;
 	}
 
