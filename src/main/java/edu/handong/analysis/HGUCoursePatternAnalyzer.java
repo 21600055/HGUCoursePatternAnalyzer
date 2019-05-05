@@ -64,8 +64,8 @@ public class HGUCoursePatternAnalyzer {
 			st[i]=new Student(spname.split(",")[1].trim());
 			i++;
 		}
-		
 		return st;
+		
 	}
 
 	/**
