@@ -48,7 +48,7 @@ public class HGUCoursePatternAnalyzer {
 		
 	}
 
-	/**
+	/** 
 	 * This method returns a Student array to initiate the field, students, from lines.
 	 * @param lines
 	 * @return
