@@ -32,7 +32,7 @@ public class HGUCoursePatternAnalyzer {
 		
 		numOfStudents = Integer.parseInt(args[0]);
 		numOfCourses = Integer.parseInt(args[1]);
-	
+		
 		students = initiateStudentArrayFromLines(lines);
 		
 		System.out.println("Number of All Students: " + numOfStudents);
@@ -56,12 +56,16 @@ public class HGUCoursePatternAnalyzer {
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
+		
+		Student[] st=new Student[100];
+		int i=0;
 		for(String spname:lines)
 		{
-			spname.split(",")[1].trim();
+			st[i]=new Student(spname.split(",")[1].trim());
+			i++;
 		}
 		
-		return null;
+		return st;
 	}
 
 	/**
@@ -73,7 +77,7 @@ public class HGUCoursePatternAnalyzer {
 	private boolean studentExist(Student[] students, Student student) {
 		
 		// TODO: implement this method
-
+		
 		return false;
 	}
 	
@@ -85,12 +89,14 @@ public class HGUCoursePatternAnalyzer {
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
-		
+		Course[] cs=new Course[100];
+		int i=0;
 		for(String spname:lines)
 		{
-			spname.split(",")[2].trim();
+			cs[i]=new Course(spname.split(",")[2].trim());
+			i++;
 		}
-		return null;
+		return cs;
 	}
 
 	/**

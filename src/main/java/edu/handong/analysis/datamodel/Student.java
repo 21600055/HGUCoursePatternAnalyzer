@@ -6,7 +6,7 @@ public class Student {
 	
 	public Student(String Name)
 	{
-		
+		this.name=Name;
 	}
 	
 	public String getName()
