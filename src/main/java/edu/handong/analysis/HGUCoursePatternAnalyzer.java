@@ -41,6 +41,7 @@ public class HGUCoursePatternAnalyzer {
 			{
 				break;
 			}
+			
 			if(i<=numOfStudents)
 			{
 				System.out.println(student.getName());
@@ -60,6 +61,7 @@ public class HGUCoursePatternAnalyzer {
 			{
 				break;
 			}
+			
 			if(i<=numOfCourses)
 			{
 				System.out.println(course.getCourseName());
