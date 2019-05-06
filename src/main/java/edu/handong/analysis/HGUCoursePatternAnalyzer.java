@@ -124,7 +124,7 @@ public class HGUCoursePatternAnalyzer {
 		// TODO: implement this method
 		
 		String[] cos=new String[lines.length];
-		int i=0,j;
+		int i=0,j,ch=0;
 		
 		for(i=0;i<lines.length;i++)
 		{
@@ -135,15 +135,18 @@ public class HGUCoursePatternAnalyzer {
 		for(String csname:lines)
 		{
 			String cs=csname.split(",")[2].trim();
-			
+			ch=0;
 			for(i=0;i<lines.length;i++)
 			{
 				if((cs.equals(cos[i])))
 				{
-					cos[j]=cs;
-					j++;
-					break;
+					ch++;
 				}
+			}
+			if(ch==0)
+			{
+				cos[j]=cs;
+				j++;
 			}
 		}
 		
