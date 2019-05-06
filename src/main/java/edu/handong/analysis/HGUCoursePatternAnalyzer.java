@@ -18,7 +18,7 @@ public class HGUCoursePatternAnalyzer {
 						"2019-1, SJ Kim, Logic Design",
 						"2019-1, SJ Kim, Algorithm Analysis",
 						};
-
+	 
 	private int numOfStudents;
 	private int numOfCourses;
 	private Student[] students;
