@@ -34,18 +34,35 @@ public class HGUCoursePatternAnalyzer {
 		
 		numOfStudents = Integer.parseInt(args[0]);
 		numOfCourses = Integer.parseInt(args[1]);
+		int i=1;
 		
 		students = initiateStudentArrayFromLines(lines);
-		
 		System.out.println("Number of All Students: " + numOfStudents);
 		for(Student student: students) {
-			System.out.println(student.getName());
+			if(i<=numOfStudents)
+			{
+				System.out.println(student.getName());
+				i++;
+			}
+			else
+			{
+				break;
+			}
 		}
 		
 		courses = initiateCourseArrayFromLines(lines);
 		System.out.println("Number of All Courses: " + numOfCourses);
+		i=1;
 		for(Course course: courses) {
-			System.out.println(course.getCourseName());
+			if(i<=numOfCourses)
+			{
+				System.out.println(course.getCourseName());
+				i++;
+			}
+			else
+			{
+				break;
+			}
 		}
 		
 	}
@@ -107,23 +124,25 @@ public class HGUCoursePatternAnalyzer {
 		// TODO: implement this method
 		
 		String[] cos=new String[lines.length];
-		int i=0,j=0;
+		int i=0,j;
 		
 		for(i=0;i<lines.length;i++)
 		{
 			cos[i]=" ";
 		}
 		
+		j=0;
 		for(String csname:lines)
 		{
 			String cs=csname.split(",")[2].trim();
 			
 			for(i=0;i<lines.length;i++)
 			{
-				if(!(cs.equals(cos[i])))
+				if(!(cos[i].equals(cs)))
 				{
 					cos[j]=cs;
 					j++;
+					break;
 				}
 			}
 		}
