@@ -1,5 +1,7 @@
 package edu.handong.analysis;
 
+import java.util.ArrayList;
+import java.util.List;
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
 
@@ -56,12 +58,26 @@ public class HGUCoursePatternAnalyzer {
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
-		
-		Student[] st=new Student[lines.length];
+		String temp=" ";
+		String[] stu=new String[lines.length];
 		int i=0;
+		
 		for(String spname:lines)
 		{
-			st[i]=new Student(spname.split(",")[1].trim());
+			String sp=spname.split(",")[1].trim();
+			if(temp!=sp)
+			{
+				stu[i]=sp;
+				i++;
+			}
+			temp=sp;
+		}
+		
+		i=0;
+		Student[] st=new Student[stu.length];
+		for(String exname:stu)
+		{
+			st[i]=new Student(exname);
 			i++;
 		}
 		return st;
