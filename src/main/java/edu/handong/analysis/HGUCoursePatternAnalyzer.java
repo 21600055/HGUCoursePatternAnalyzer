@@ -70,6 +70,7 @@ public class HGUCoursePatternAnalyzer {
 				stu[i]=sp;
 				i++;
 			}
+			
 			temp=sp;
 		}
 		
