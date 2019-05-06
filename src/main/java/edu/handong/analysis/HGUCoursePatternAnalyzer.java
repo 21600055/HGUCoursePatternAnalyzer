@@ -138,7 +138,7 @@ public class HGUCoursePatternAnalyzer {
 			
 			for(i=0;i<lines.length;i++)
 			{
-				if(!(cos[i].equals(cs)))
+				if((cs.equals(cos[i])))
 				{
 					cos[j]=cs;
 					j++;
