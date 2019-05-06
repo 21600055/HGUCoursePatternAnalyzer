@@ -65,7 +65,7 @@ public class HGUCoursePatternAnalyzer {
 		for(String spname:lines)
 		{
 			String sp=spname.split(",")[1].trim();
-			if(temp!=sp)
+			if(!(temp.equals(sp)))
 			{
 				stu[i]=sp;
 				i++;
@@ -73,7 +73,6 @@ public class HGUCoursePatternAnalyzer {
 			
 			temp=sp;
 		}
-		
 		i=0;
 		Student[] st=new Student[stu.length];
 		for(String exname:stu)
@@ -106,11 +105,34 @@ public class HGUCoursePatternAnalyzer {
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
-		Course[] cs=new Course[lines.length];
-		int i=0;
-		for(String spname:lines)
+		
+		String[] cos=new String[lines.length];
+		int i=0,j=0;
+		
+		for(i=0;i<lines.length;i++)
 		{
-			cs[i]=new Course(spname.split(",")[2].trim());
+			cos[i]=" ";
+		}
+		
+		for(String csname:lines)
+		{
+			String cs=csname.split(",")[2].trim();
+			
+			for(i=0;i<lines.length;i++)
+			{
+				if(!(cs.equals(cos[i])))
+				{
+					cos[j]=cs;
+					j++;
+				}
+			}
+		}
+		
+		i=0;
+		Course[] cs=new Course[cos.length];
+		for(String exname:cos)
+		{
+			cs[i]=new Course(exname);
 			i++;
 		}
 		return cs;
