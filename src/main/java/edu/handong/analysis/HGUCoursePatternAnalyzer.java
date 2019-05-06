@@ -184,7 +184,6 @@ public class HGUCoursePatternAnalyzer {
 			return true;
 		}
 		return false;
-		return false;
 	}
 
 }
