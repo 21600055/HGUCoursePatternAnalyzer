@@ -1,7 +1,5 @@
 package edu.handong.analysis;
 
-import java.util.ArrayList;
-import java.util.List;
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
 
@@ -39,6 +37,10 @@ public class HGUCoursePatternAnalyzer {
 		students = initiateStudentArrayFromLines(lines);
 		System.out.println("Number of All Students: " + numOfStudents);
 		for(Student student: students) {
+			if(studentExist(students,student)==false)
+			{
+				break;
+			}
 			if(i<=numOfStudents)
 			{
 				System.out.println(student.getName());
@@ -54,6 +56,10 @@ public class HGUCoursePatternAnalyzer {
 		System.out.println("Number of All Courses: " + numOfCourses);
 		i=1;
 		for(Course course: courses) {
+			if(courseExist(courses,course)==false)
+			{
+				break;
+			}
 			if(i<=numOfCourses)
 			{
 				System.out.println(course.getCourseName());
@@ -107,12 +113,15 @@ public class HGUCoursePatternAnalyzer {
 	 * @param student
 	 * @return boolean
 	 */
-	/*private boolean studentExist(Student[] students, Student student) {
+	private boolean studentExist(Student[] students, Student student) {
 		
 		// TODO: implement this method
-		
+		if(students!=null && student!=null)
+		{
+			return true;
+		}
 		return false;
-	}*/
+	}
 	
 	/**
 	 * This method returns a Course array to initiate the field, courses, from lines.
@@ -166,11 +175,16 @@ public class HGUCoursePatternAnalyzer {
 	 * @param course
 	 * @return boolean
 	 */
-	/*private boolean courseExist(Course[] courses, Course course) {
+	private boolean courseExist(Course[] courses, Course course) {
 		
 		// TODO: implement this method
-
+		
+		if(courses!=null && course!=null)
+		{
+			return true;
+		}
 		return false;
-	}*/
+		return false;
+	}
 
 }
