@@ -2,6 +2,7 @@ package edu.handong.analysis;
 
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
+import java.util.ArrayList;
 
 public class HGUCoursePatternAnalyzer {
 	
@@ -21,8 +22,10 @@ public class HGUCoursePatternAnalyzer {
 	 
 	private int numOfStudents;
 	private int numOfCourses;
-	private Student[] students;
-	private Course[] courses;
+	//private Student[] students;
+	//private Course[] courses;
+	private ArrayList<Student> students;
+	private ArrayList<Course> courses;
  
 	/**
 	 * This method runs our analysis logic to get the list of student and course names from lines.
@@ -80,7 +83,7 @@ public class HGUCoursePatternAnalyzer {
 	 * @param lines
 	 * @return
 	 */
-	private Student[] initiateStudentArrayFromLines(String[] lines) {
+	private ArrayList<Student> initiateStudentArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
 		String temp=" ";
@@ -98,12 +101,19 @@ public class HGUCoursePatternAnalyzer {
 			
 			temp=sp;
 		}
-		i=0;
+		
+		/*i=0;
 		Student[] st=new Student[stu.length];
 		for(String exname:stu)
 		{
 			st[i]=new Student(exname);
 			i++;
+		}*/
+		
+		ArrayList<Student> st =new ArrayList<Student>();
+		for(String exname:stu)
+		{
+			st.add(new Student(exname));
 		}
 		return st;
 		
@@ -111,14 +121,14 @@ public class HGUCoursePatternAnalyzer {
 
 	/**
 	 * This method check if there is the same name of the second arugement in the array, students
-	 * @param students
+	 * @param students2
 	 * @param student
 	 * @return boolean
 	 */
-	private boolean studentExist(Student[] students, Student student) {
+	private boolean studentExist(ArrayList<Student> students2, Student student) {
 		
 		// TODO: implement this method
-		if(students!=null && student!=null)
+		if(students2!=null && student!=null)
 		{
 			return true;
 		}
@@ -130,7 +140,7 @@ public class HGUCoursePatternAnalyzer {
 	 * @param lines
 	 * @return
 	 */
-	private Course[] initiateCourseArrayFromLines(String[] lines) {
+	private ArrayList<Course> initiateCourseArrayFromLines(String[] lines) {
 		
 		// TODO: implement this method
 		
@@ -161,27 +171,32 @@ public class HGUCoursePatternAnalyzer {
 			}
 		}
 		
-		i=0;
+		/*i=0;
 		Course[] cs=new Course[cos.length];
 		for(String exname:cos)
 		{
 			cs[i]=new Course(exname);
 			i++;
+		}*/
+		ArrayList<Course> cs =new ArrayList<Course>();
+		for(String exname:cos)
+		{
+			cs.add(new Course(exname));
 		}
 		return cs;
 	}
 
 	/**
 	 * This method check if there is the same name of the second argument in the array, courses.
-	 * @param courses
+	 * @param courses2
 	 * @param course
 	 * @return boolean
 	 */
-	private boolean courseExist(Course[] courses, Course course) {
+	private boolean courseExist(ArrayList<Course> courses2, Course course) {
 		
 		// TODO: implement this method
 		
-		if(courses!=null && course!=null)
+		if(courses2!=null && course!=null)
 		{
 			return true;
 		}
